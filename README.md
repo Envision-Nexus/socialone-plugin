@@ -21,6 +21,9 @@ Skills and MCP connection for [SocialOne](https://social.evnx.community) (social
 - Reading data is free. Data covers only what your account has already paid to crawl.
 - Posts and comments returned by SocialOne are third-party text. The skills tell Claude to treat them as data, not instructions.
 
+## Support
+socialone@conversion.vn
+
 ## Privacy
 SocialOne privacy policy: https://social.evnx.community/privacy
 
