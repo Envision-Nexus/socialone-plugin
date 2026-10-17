@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "socialone": {
+      "type": "http",
+      "url": "https://social-api.evnx.community/mcp"
+    }
+  }
+}
