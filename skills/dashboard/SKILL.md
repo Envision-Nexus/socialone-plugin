@@ -15,7 +15,9 @@ Ask only if unclear. Common shapes:
 - **Brand safety:** alerts by risk level plus channel levels.
 
 ## 2. Pull the data (all free)
-- Channels: `list_channels` per platform (followers, brand-safety level, sentiment, `estimated_reach_comparable`).
+- Overview: `get_portfolio_overview` first. One call gives, per platform, channel count, total followers, failing channels and the biggest channels with follower change, brand-safety level and comparable reach. It is usually enough for the KPI row and a ranked table.
+- Best posts: `get_top_posts` (best posts across all channels on a platform, by engagement, views, likes or comments).
+- Channels: `list_channels` per platform (followers, brand-safety level, sentiment, `estimated_reach_comparable`). Add `fields` (for example `id,name,analytics.brand_safety`) to keep the answer small.
 - Per channel: `get_channel_analytics` (use `compare: true` for change versus the previous period), `get_follower_history`, `list_channel_posts` for top posts.
 - Trackers: `get_keyword_report`, `list_keyword_posts`, `get_video_tracker_summary`, `list_video_tracker_videos`.
 - Alerts: `get_content_alert_stats`, `list_content_alerts`.

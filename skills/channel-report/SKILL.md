@@ -8,13 +8,13 @@ description: Build a written performance report for one or several SocialOne cha
 Produce a short report the user can read in a minute. Reading is free, so gather what you need.
 
 ## Steps
-1. **Pick the channels.** If the user named them, find them with `list_channels` (per platform). If not, list the channels and ask which ones, or report on the top few by followers.
+1. **Pick the channels.** If the user named them, find them with `list_channels` (per platform). If not, call `get_portfolio_overview` (one call: per platform the channel count, followers, failing channels and the biggest channels with follower change, brand-safety level and comparable reach), then ask which ones, or report on the top few by followers. Use `fields` on list calls to keep answers small, for example `fields=id,name,analytics.brand_safety`.
 2. **Pick the period.** Default to the last 30 days. Use `YYYY-MM-DD` dates.
 3. **Per channel, collect:**
    - `get_channel`: profile, followers, category, sync status, and headline analytics (brand-safety level and sentiment, `estimated_reach_comparable`).
    - `get_channel_analytics` with `start_date`, `end_date` and `compare: true`: KPIs with change versus the previous period, reach, best posting times, content breakdown.
    - `get_follower_history` for the follower curve.
-   - `list_channel_posts` with `since`/`until` for the period. It lists oldest first, so page with `after` until the window is covered. Pick the top posts by engagement yourself.
+   - Top posts: `get_top_posts` ranks the best posts across all of the account's channels on one platform (`metric` engagement, views, likes or comments; `days` up to 92). For one channel, use `list_channel_posts` with `since`/`until`; it lists oldest first, so page with `after` until the window is covered, and pick the top posts by engagement yourself.
 4. **Compare channels.** `compare_channels` takes 2 to 4 channels but only works for Facebook. For other platforms, line the numbers up yourself using `estimated_reach_comparable` (one views-based scale across platforms).
 5. **Facebook extras.** `get_audience_demographics` (gender, age, location, estimated). Other platforms have no demographics yet.
 
