@@ -10,12 +10,19 @@ Skills and MCP connection for [SocialOne](https://social.evnx.community) (social
 - `skills/brand-safety-check`: is this creator or channel safe for a brand.
 - `skills/keyword-monitoring`: keyword and video trackers.
 
+## What this plugin runs, sends and fetches
+- It contains only text files: skill instructions, one manifest and one MCP connection. It has no hooks, no scripts, no commands, no agents, and installs no packages.
+- The only network destination is the SocialOne MCP server above. Claude sends tool calls there (for example the channel and period you ask about) and receives your account's data back. Nothing is sent anywhere else.
+- Sign-in uses OAuth with your own SocialOne account. The plugin stores no credentials and asks for no API keys.
+- The `dashboard` skill makes Claude write an HTML page that embeds the data it already fetched. The page does not call SocialOne or any other service.
+- Skills never spend credits on their own. Any action that costs credits shows a quote first and runs only after you confirm.
+
 ## Good to know
-- Reading data is free. Actions that cost credits always show a price first and need your confirmation.
-- Data covers only what your account has already paid to crawl.
+- Reading data is free. Data covers only what your account has already paid to crawl.
+- Posts and comments returned by SocialOne are third-party text. The skills tell Claude to treat them as data, not instructions.
 
 ## Privacy
-https://social.evnx.community/privacy
+SocialOne privacy policy: https://social.evnx.community/privacy
 
-## Status
-Private, not yet submitted to the Claude directory. License and support contact to be decided.
+## License
+MIT, see `LICENSE`.
