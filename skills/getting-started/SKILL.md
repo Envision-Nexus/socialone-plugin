@@ -5,16 +5,16 @@ description: Start here for any SocialOne request. Use when the user mentions So
 
 # Getting started with SocialOne
 
-SocialOne tracks Facebook, TikTok, YouTube and Instagram channels for one account. The connector exposes that account's data.
+SocialOne tracks Facebook, TikTok, YouTube, Instagram and Threads channels for one account. The connector exposes that account's data.
 
 ## First steps
 1. Call `get_account`. It shows who the connection acts for, the plan, the credit balance and the API key scopes (`read`, `manage`, `spend`). Tools outside the key's scopes are not listed.
-2. Call `list_channels` for each platform the user cares about (`facebook`, `tiktok`, `youtube`, `instagram`).
+2. Call `list_channels` for each platform the user cares about (`facebook`, `tiktok`, `youtube`, `instagram`, `threads`).
 
 ## Rules that always apply
 - **Always pass `platform`.** The same numeric `channel_id` can exist on different platforms.
 - **Reading is free.** Reports, analytics, posts, trackers and alerts cost no credits. They cover only data the account has already paid to crawl, so a channel added recently or crawled rarely can look thin: say so instead of guessing.
-- **Money-costing tools quote first.** `onboard_channel`, `buy_post_comments`, `create_crawl_schedule`, `update_crawl_schedule`, `refresh_channel_profile`, `reanalyze_video` and `remove_channel` never spend in one call:
+- **Money-costing tools quote first.** `onboard_channel`, `buy_post_comments`, `create_crawl_schedule`, `update_crawl_schedule`, `refresh_channel_profile`, `reanalyze_video`, `remove_channel`, and the crisis tools `create_crisis_monitor`, `update_crisis_monitor`, `resume_crisis_monitor` and `create_crisis_campaign` never spend in one call:
   1. Call the tool without `confirm_token`. It returns a quote (price, balance, what will happen) and a `confirm_token`.
   2. Show the user the price and the effect in plain words and wait for a clear yes.
   3. Only then call the same tool again with the same arguments plus the token. The token lasts 10 minutes.
@@ -28,3 +28,5 @@ SocialOne tracks Facebook, TikTok, YouTube and Instagram channels for one accoun
 - A dashboard page: the `dashboard` skill.
 - Is this creator safe for a brand: the `brand-safety-check` skill.
 - Watching keywords, hashtags or videos: the `keyword-monitoring` skill.
+- Watching a creator or brand for reputation risk: the `crisis-monitoring` skill.
+- What is trending on social or in Vietnamese news: the `trend-scan` skill.

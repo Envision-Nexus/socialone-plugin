@@ -1,6 +1,6 @@
 # SocialOne plugin for Claude
 
-Skills and MCP connection for [SocialOne](https://social.evnx.community) (social listening on Facebook, TikTok, YouTube and Instagram).
+Skills and MCP connection for [SocialOne](https://social.evnx.community) (social listening on Facebook, TikTok, YouTube, Instagram and Threads).
 
 ## What is inside
 - `.mcp.json`: connects to the SocialOne MCP server `https://social-api.evnx.community/mcp` (OAuth 2.1, sign in with your SocialOne account).
@@ -9,6 +9,8 @@ Skills and MCP connection for [SocialOne](https://social.evnx.community) (social
 - `skills/dashboard`: a visual dashboard page from live data.
 - `skills/brand-safety-check`: is this creator or channel safe for a brand.
 - `skills/keyword-monitoring`: keyword and video trackers.
+- `skills/crisis-monitoring`: watch a creator or brand for reputation risk (Crisis Alert).
+- `skills/trend-scan`: rising hashtags, sounds and creators, and Vietnamese news trends.
 
 ## What this plugin runs, sends and fetches
 - It contains only text files: skill instructions, one manifest and one MCP connection. It has no hooks, no scripts, no commands, no agents, and installs no packages.
