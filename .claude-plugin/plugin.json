@@ -1,9 +1,10 @@
 {
   "name": "socialone",
   "displayName": "SocialOne",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Social listening for Facebook, TikTok, YouTube, Instagram and Threads: channels, posts, comments, brand safety, crisis alerts, trends and dashboards, through the SocialOne MCP server.",
   "author": { "name": "Envision Nexus", "email": "socialone@conversion.vn" },
   "homepage": "https://social.evnx.community",
-  "license": "MIT"
+  "license": "MIT",
+  "privacyPolicyUrl": "https://social.evnx.community/privacy"
 }
