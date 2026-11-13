@@ -9,7 +9,10 @@ SocialOne tracks Facebook, TikTok, YouTube, Instagram and Threads channels for o
 
 ## First steps
 1. Call `get_account`. It shows who the connection acts for, the plan, the credit balance and the API key scopes (`read`, `manage`, `spend`). Tools outside the key's scopes are not listed.
-2. Call `list_channels` for each platform the user cares about (`facebook`, `tiktok`, `youtube`, `instagram`, `threads`).
+2. Call `get_portfolio_overview` (optionally with `platform`) for channel counts, follower totals, failing syncs and the biggest channels per platform. Use `list_channels` only to look at specific channels.
+
+## Large accounts
+`list_channels` has no search and no sort, and an account can hold thousands of channels (including ones shared with it). Never page through all of them to answer a question. To find the biggest channels use `get_portfolio_overview` (`platform`, `top`); to find a named creator ask the user for the channel link or id, and if you must scan, pass `fields` to trim each row and stop at the first match.
 
 ## Rules that always apply
 - **Always pass `platform`.** The same numeric `channel_id` can exist on different platforms.

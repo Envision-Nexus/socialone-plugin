@@ -11,7 +11,7 @@ Build one self-contained HTML page from live SocialOne data. Pull the data with 
 Ask only if unclear. Common shapes:
 - **Channel overview:** all channels of a platform or all platforms.
 - **One channel deep dive.**
-- **Keyword or video tracker:** mentions over time and top posts.
+- **Keyword tracker:** mentions over time and top posts, per source.
 - **Brand safety:** alerts by risk level plus channel levels.
 
 ## 2. Pull the data (all free)
@@ -19,7 +19,7 @@ Ask only if unclear. Common shapes:
 - Best posts: `get_top_posts` (best posts across all channels on a platform, by engagement, views, likes or comments).
 - Channels: `list_channels` per platform (followers, brand-safety level, sentiment, `estimated_reach_comparable`). Add `fields` (for example `id,name,analytics.brand_safety`) to keep the answer small.
 - Per channel: `get_channel_analytics` (use `compare: true` for change versus the previous period), `get_follower_history`, `list_channel_posts` for top posts.
-- Trackers: `get_keyword_report`, `list_keyword_posts`, `get_video_tracker_summary`, `list_video_tracker_videos`.
+- Trackers: `get_keyword_report` and `list_keyword_posts` (one `source` per call: facebook, tiktok, youtube, instagram or threads).
 - Alerts: `get_content_alert_stats`, `list_content_alerts`.
 - Trends: `get_trends` (rising hashtags, sounds and creators among the account's channels).
 

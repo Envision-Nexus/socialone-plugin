@@ -8,7 +8,7 @@ Skills and MCP connection for [SocialOne](https://social.evnx.community) (social
 - `skills/channel-report`: written performance report for one or more channels.
 - `skills/dashboard`: a visual dashboard page from live data.
 - `skills/brand-safety-check`: is this creator or channel safe for a brand.
-- `skills/keyword-monitoring`: keyword and video trackers.
+- `skills/keyword-monitoring`: keyword trackers across Facebook, TikTok, YouTube, Instagram and Threads.
 - `skills/crisis-monitoring`: watch a creator or brand for reputation risk (Crisis Alert).
 - `skills/trend-scan`: rising hashtags, sounds and creators, and Vietnamese news trends.
 

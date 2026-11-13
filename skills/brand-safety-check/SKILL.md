@@ -8,7 +8,7 @@ description: Check whether a creator or channel looks safe for a brand, using So
 SocialOne scores each channel's recent posts (last 90 days) and exposes the result on every channel.
 
 ## Steps
-1. Find the channel with `list_channels` (or `get_channel` if the id is known). Always pass `platform`. If the creator is not in the account, say so. Adding it costs credits, so follow the quote-first rule from `getting-started` and only do it if the user wants it.
+1. Find the channel. For "the biggest channel" or "my top creators" use `get_portfolio_overview` (`platform`, `top`), which already shows each channel's brand-safety level. For a named creator ask for the link or id and use `get_channel`; scan `list_channels` (with `fields`) only as a last resort, because a large account has thousands of channels. Always pass `platform`. If the creator is not in the account, say so. Adding it costs credits, so follow the quote-first rule from `getting-started` and only do it if the user wants it.
 2. Read `brand_safety` and `sentiment` from the channel's analytics:
    - The **level** is one of Safe, Stable, Acceptable, Risky or Unknown. Unknown usually means the channel has not been scanned enough yet (a new channel, or too few posts). Report that, and never treat Unknown as safe.
    - **Sentiment** shares are null when fewer than 10 posts were checked.
