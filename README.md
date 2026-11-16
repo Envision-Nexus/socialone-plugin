@@ -10,7 +10,7 @@ Skills and MCP connection for [SocialOne](https://social.evnx.community) (social
 - `skills/brand-safety-check`: is this creator or channel safe for a brand.
 - `skills/keyword-monitoring`: keyword trackers across Facebook, TikTok, YouTube, Instagram and Threads.
 - `skills/crisis-monitoring`: watch a creator or brand for reputation risk (Crisis Alert).
-- `skills/trend-scan`: rising hashtags, sounds and creators, and Vietnamese news trends.
+- `skills/trend-scan`: rising hashtags, sounds and creators in your channels, platform-wide Trend Discovery (radar, seasonal calendar, content ideas), and Vietnamese news trends.
 
 ## What this plugin runs, sends and fetches
 - It contains only text files: skill instructions, one manifest and one MCP connection. It has no hooks, no scripts, no commands, no agents, and installs no packages.
