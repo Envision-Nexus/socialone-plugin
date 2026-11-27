@@ -1,6 +1,6 @@
 ---
 name: dashboard
-description: Turn SocialOne data into a visual dashboard page (KPI cards, trend charts, ranked tables). Use when the user asks for a dashboard, a visual overview, charts, or a shareable page of their channels, trackers or alerts.
+description: Turn SocialOne data into a visual dashboard page (KPI cards, trend charts, ranked tables). Use when the user asks for a dashboard, a visual overview, charts, or a shareable page of their channels, trackers or brand safety.
 ---
 
 # Dashboard from SocialOne data
@@ -12,7 +12,7 @@ Ask only if unclear. Common shapes:
 - **Channel overview:** all channels of a platform or all platforms.
 - **One channel deep dive.**
 - **Keyword tracker:** mentions over time and top posts, per source.
-- **Brand safety:** alerts by risk level plus channel levels.
+- **Brand safety:** channel levels plus flagged posts by risk level.
 
 ## 2. Pull the data (all free)
 - Overview: `get_portfolio_overview` first. One call gives, per platform, channel count, total followers, failing channels and the biggest channels with follower change, brand-safety level and comparable reach. It is usually enough for the KPI row and a ranked table.
@@ -20,7 +20,7 @@ Ask only if unclear. Common shapes:
 - Channels: `list_channels` per platform (followers, brand-safety level, sentiment, `estimated_reach_comparable`). Add `fields` (for example `id,name,analytics.brand_safety`) to keep the answer small.
 - Per channel: `get_channel_analytics` (use `compare: true` for change versus the previous period), `get_follower_history`, `list_channel_posts` for top posts.
 - Trackers: `get_keyword_report` and `list_keyword_posts` (one `source` per call: facebook, tiktok, youtube, instagram or threads).
-- Alerts: `get_content_alert_stats`, `list_content_alerts`.
+- Brand safety: channel `brand_safety` (from `get_channel` / `get_portfolio_overview`) and `list_post_safety` per Facebook channel.
 - Trends: `get_trends` (rising hashtags, sounds and creators among the account's channels).
 
 Pass `platform` every time. Keep requests small (use `limit`) and stop when you have what the page needs.
